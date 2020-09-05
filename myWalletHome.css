@@ -1,4 +1,4 @@
-/*
+over/*
  * Globals
  */
 
@@ -103,4 +103,9 @@ body {
  */
 .mastfoot {
   color: rgba(255, 255, 255, .5);
+}
+
+#wallettPic{
+  width: 599px;
+  height: 400px;
 }
