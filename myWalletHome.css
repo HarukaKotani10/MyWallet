@@ -105,3 +105,15 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+#incomeBtn{
+
+  background-color: #F56F52;
+  width: 130px;
+}
+#expensesBtn{
+
+  background-color: #5ABCF3;
+  width: 130px;
+}
+
