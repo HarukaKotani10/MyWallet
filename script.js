@@ -1,8 +1,20 @@
 
-var tittle;
-var amount;
+var $ = function(id){
+    return document.getElementById(id);
+}
 
-tittle = document.getElementById("tittle").text();
-amount = document.getElementById("amount");
+var addToMain = function(){
 
-$("displayTittle").text(tittle);
+    var tittle, amount;
+
+    tittle = $("tittle").value;
+    amount = $("amount").value;
+    $("displayTittle").text(tittle);
+
+}
+
+window.onload = function(){
+    $("add").onclick = addToMain;
+
+}
+
