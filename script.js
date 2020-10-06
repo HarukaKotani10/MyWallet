@@ -5,16 +5,19 @@ var $ = function(id){
 
 var addToMain = function(){
 
-    var tittle, amount;
+    document.write("djnf;sldjfk");
 
-    tittle = $("tittle").value;
-    amount = $("amount").value;
-    $("displayTittle").text(tittle);
+    // var tittle, amount;
+
+    // tittle = $("tittle").value;
+    // amount = $("amount").value;
+    // $("displayTittle").innerHTML(tittle);
 
 }
 
 window.onload = function(){
-    $("add").onclick = addToMain;
+
+    $("addToMain").onclick = addToMain;
 
 }
 
