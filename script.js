@@ -5,13 +5,11 @@ var $ = function(id){
 
 var addToMain = function(){
 
-    document.write("djnf;sldjfk");
+    var tittle, amount;
 
-    // var tittle, amount;
-
-    // tittle = $("tittle").value;
-    // amount = $("amount").value;
-    // $("displayTittle").innerHTML(tittle);
+    tittle = $("tittle").value;
+    amount = $("amount").value;
+    $("displayTittle").innerHTML("tittle");
 
 }
 
