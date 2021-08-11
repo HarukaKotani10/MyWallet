@@ -47,7 +47,7 @@ class Page  {
     <div class="inner">
       <h3 class="masthead-brand">My Wallet</h3>
       <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link active" href="index.php">Home</a>
         <a class="nav-link" href="#">Features</a>
         <a class="nav-link" href="#">Contact</a>
       </nav>
@@ -79,8 +79,8 @@ class Page  {
     <h2 class="cover-heading" >Your balance: </h2><h1 id="balance">$0.00</h2>
   
     <p class="lead">
-      <a href="#" id="incomeBtn" class="btn btn-lg btn-secondary" onclick="incomeFunction()">+</a>
-      <a href="#" id="expensesBtn" class="btn btn-lg btn-secondary" onclick="expensesFunction()">-</a>
+      <a href="expenses.php" id="incomeBtn" class="btn btn-lg btn-secondary">+</a>
+      <a href="income.php" id="expensesBtn" class="btn btn-lg btn-secondary">-</a>
     </p>
 
     <table>
@@ -101,10 +101,27 @@ class Page  {
     }
 
     function expensesFunction(){
-      window.location.replace("expenses.html");
-    }
+      window.location.replace("expenses.php");
+    
   </script>
         <?php
+    }
+
+    static function expenses(){
+      ?>
+       <main role="main" class="inner cover">
+    <label for="tittle">Tittle </label>
+    <input type="text" id="tittle"><br>
+    <label for="amount">$ </label>
+    <input type="number" id="amount"><br>
+
+     
+    <a href="" id="addToMain" class="btn btn-lg btn-secondary" >ADD</a>
+    <a href="index.php" id="goBackToMain" class="btn btn-lg btn-secondary" >Back to Main</a>
+  </main>
+
+
+<?php
     }
 
 }
