@@ -1,0 +1,9 @@
+[12-Aug-2021 01:22:14 UTC] PHP Notice:  Undefined index: action in C:\temp\CSIS3280-001\FinalA_HKo03553\Final_HKo03553.php on line 32
+[12-Aug-2021 01:22:14 UTC] PHP Stack trace:
+[12-Aug-2021 01:22:14 UTC] PHP   1. {main}() C:\temp\CSIS3280-001\FinalA_HKo03553\Final_HKo03553.php:0
+[12-Aug-2021 01:22:17 UTC] PHP Notice:  Undefined index: action in C:\temp\CSIS3280-001\FinalA_HKo03553\Final_HKo03553.php on line 37
+[12-Aug-2021 01:22:17 UTC] PHP Stack trace:
+[12-Aug-2021 01:22:17 UTC] PHP   1. {main}() C:\temp\CSIS3280-001\FinalA_HKo03553\Final_HKo03553.php:0
+[12-Aug-2021 01:22:17 UTC] PHP Notice:  Undefined index: action in C:\temp\CSIS3280-001\FinalA_HKo03553\Final_HKo03553.php on line 51
+[12-Aug-2021 01:22:17 UTC] PHP Stack trace:
+[12-Aug-2021 01:22:17 UTC] PHP   1. {main}() C:\temp\CSIS3280-001\FinalA_HKo03553\Final_HKo03553.php:0
