@@ -18,7 +18,7 @@ Create TABLE Expense (
 	
 ) Engine=InnoDB;
 
-Create TABLE Users (
+Create TABLE User (
     UserID TINYINT(3) AUTO_INCREMENT PRIMARY KEY,
     UserName VARCHAR(20),
     Balance INT

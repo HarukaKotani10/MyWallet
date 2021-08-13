@@ -89,7 +89,9 @@ class Page
 
     <table>
 
-      <p>table here </p>
+      <table>
+
+      </table>
       <p>001: 09/01/2020 income $50000 restaurant balance $-50000</p>
 
       <p id="displayTittle"> Something</p>
@@ -125,6 +127,21 @@ class Page
     <a href="index.php" id="goBackToMain" class="btn btn-lg btn-secondary" >Back to Main</a>
   </main>
 
+
+<?php
+}
+
+    public static function topPage()
+    {
+        ?>
+<main role="main" class="inner cover">
+
+  <h1 class="cover-heading">Record your income and expenses</h1>
+  <p class="lead">My walet helps you to manage your wallet</p>
+  <p class="lead">
+    <a href="index.php" class="btn btn-lg btn-secondary">TRY NOW</a>
+  </p>
+</main>
 
 <?php
 }
