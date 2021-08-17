@@ -137,11 +137,18 @@ class Page
     public static function expenses()
     {
         ?>
-       <main role="main" class="inner cover">
-    <label for="tittle">Tittle </label>
-    <input type="text" id="tittle"><br>
+      <main role="main" class="inner cover">
+      <label for="category">category</label>
+
+<select name="category" id="cars">
+  <option value="volvo">Food</option>
+  <option value="saab">Gas</option>
+  <option value="mercedes">Food</option>
+  <option value="audi">Audi</option>
+</select>
     <label for="amount">$ </label>
     <input type="number" id="amount"><br>
+    <input type="date">
 
 
     <a href="" id="addToMain" class="btn btn-lg btn-secondary" >ADD</a>
