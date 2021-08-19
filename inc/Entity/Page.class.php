@@ -137,24 +137,26 @@ class Page
     public static function expenses()
     {
         ?>
+      <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
       <main role="main" class="inner cover">
       <label for="category">category</label>
 
 <select name="category" id="cars">
-  <option value="volvo">Food</option>
-  <option value="saab">Gas</option>
-  <option value="mercedes">Food</option>
+  <option value="food">Food</option>
+  <option value="gas">Gas</option>
+  <option value="food">Food</option>
   <option value="audi">Audi</option>
 </select>
     <label for="amount">$ </label>
-    <input type="number" id="amount"><br>
-    <input type="date">
+    <input type="number" id="amount" name="amount"><br>
+    <input type="date" name="date">
 
 
-    <a href="" id="addToMain" class="btn btn-lg btn-secondary" >ADD</a>
+    <input type="submit" value="add" class="btn btn-lg btn-secondary">
+    <a href="" id="addToMain" value="add">ADD</a>
     <a href="index.php" id="goBackToMain" class="btn btn-lg btn-secondary" >Back to Main</a>
   </main>
-
+      </form>
 
 <?php
 }

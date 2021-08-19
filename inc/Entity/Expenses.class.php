@@ -3,43 +3,25 @@
 class Expenses
 {
 
-    private $IncomeID;
-    private $IncomeDate;
+    private $ExpenseID;
+    private $ExpenseDate;
     private $Amount;
     private $Category;
 
-    /**
-     * Get the value of IncomeID
+     /**
+     * Get the value of ExpenseID
      */
-    public function getIncomeID()
+    public function getExpenseID()
     {
-        return $this->IncomeID;
+        return $this->ExpenseID;
     }
 
     /**
-     * Set the value of IncomeID
+     * Set the value of ExpenseID
      */
-    public function setIncomeID($IncomeID): self
+    public function setExpenseID($ExpenseID): self
     {
-        $this->IncomeID = $IncomeID;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of IncomeDate
-     */
-    public function getIncomeDate()
-    {
-        return $this->IncomeDate;
-    }
-
-    /**
-     * Set the value of IncomeDate
-     */
-    public function setIncomeDate($IncomeDate): self
-    {
-        $this->IncomeDate = $IncomeDate;
+        $this->ExpenseID = $ExpenseID;
 
         return $this;
     }
@@ -76,6 +58,24 @@ class Expenses
     public function setCategory($Category): self
     {
         $this->Category = $Category;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of ExpenseDate
+     */
+    public function getExpenseDate()
+    {
+        return $this->ExpenseDate;
+    }
+
+    /**
+     * Set the value of ExpenseDate
+     */
+    public function setExpenseDate($ExpenseDate): self
+    {
+        $this->ExpenseDate = $ExpenseDate;
 
         return $this;
     }
