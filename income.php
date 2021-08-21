@@ -6,16 +6,16 @@ require_once('inc/Entity/Income.class.php');
 require_once('inc/Utility/IncomeDAO.class.php');
 require_once('inc/Utility/PDOService.class.php');
 
-IncomeDAO::initialize("Income");
+RecordDAO::initialize("Record");
 
 if(!empty($_POST)){
 
-        $addIncome = new Income();
+        $addIncome = new Record();
         $addIncome->setCategory($_POST['category']);
         $addIncome->setAmount($_POST['amount']);
-        $addIncome->setIncomeDate($_POST['date']);
+        $addIncome->setRecordDate($_POST['date']);
     
-        IncomeDAO::addIncome($addIncome);
+        RecordDAO::addIncome($addIncome);
 
 }
 Page::header();

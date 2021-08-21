@@ -1,27 +1,41 @@
 <?php
 
-class Expenses
+class Record
 {
 
-    private $ExpenseID;
-    private $ExpenseDate;
+    private $IncomeID;
+    private $RecordDate;
     private $Amount;
     private $Category;
 
-     /**
-     * Get the value of ExpenseID
+    /**
+     * Get the value of IncomeID
      */
-    public function getExpenseID()
+    public function getIncomeID()
     {
-        return $this->ExpenseID;
+        return $this->IncomeID;
     }
 
     /**
-     * Set the value of ExpenseID
+     * Set the value of IncomeID
      */
-    public function setExpenseID($ExpenseID): self
+    public function setIncomeID($IncomeID): self
     {
-        $this->ExpenseID = $ExpenseID;
+        $this->IncomeID = $IncomeID;
+
+        return $this;
+    }
+    public function getRecordDate()
+    {
+        return $this->RecordDate;
+    }
+
+    /**
+     * Set the value of IncomeID
+     */
+    public function setRecordDate($RecordDate): self
+    {
+        $this->RecordDate = $RecordDate;
 
         return $this;
     }
@@ -58,24 +72,6 @@ class Expenses
     public function setCategory($Category): self
     {
         $this->Category = $Category;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of ExpenseDate
-     */
-    public function getExpenseDate()
-    {
-        return $this->ExpenseDate;
-    }
-
-    /**
-     * Set the value of ExpenseDate
-     */
-    public function setExpenseDate($ExpenseDate): self
-    {
-        $this->ExpenseDate = $ExpenseDate;
 
         return $this;
     }

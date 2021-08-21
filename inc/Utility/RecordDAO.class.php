@@ -1,5 +1,5 @@
 <?php
-class IncomeDAO{
+class RecordDAO{
 
     private static $db;
 
@@ -7,11 +7,11 @@ class IncomeDAO{
         self::$db = new PDOService($className);
     }
 
-    static function addIncome(Income $addIncome) {
+    static function addIncome(Record $addIncome) {
         $sql = "INSERT INTO Income(IncomeDate, Amount, Category) VALUE(:date, :amount, :category)";
 
         self::$db->query($sql);
-        self::$db->bind(":date", $addIncome->getIncomeDate());
+        self::$db->bind(":date", $addIncome->getRecordDate());
         self::$db->bind(":amount", $addIncome->getAmount());
         self::$db->bind(":category", $addIncome->getCategory());
 

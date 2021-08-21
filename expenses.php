@@ -10,10 +10,10 @@ ExpenseDAO::initialize("Expense");
 
 if(!empty($_POST)){
 
-        $addExpense = new Expenses();
+        $addExpense = new Record();
         $addExpense->setCategory($_POST['category']);
         $addExpense->setAmount($_POST['amount']);
-        $addExpense->setExpenseDate($_POST['date']);
+        $addExpense->setDate($_POST['date']);
     
         ExpenseDAO::addExpense($addExpense);
 
