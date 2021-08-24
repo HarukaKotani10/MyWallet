@@ -1,17 +1,17 @@
-DROP DATABASE IF EXISTS MyWallet
-CREATE DATABASE MyWallet
-USE MyWallet
+DROP DATABASE IF EXISTS MyWallet;
+CREATE DATABASE MyWallet;
+USE MyWallet;
 
 Create TABLE Record (
-    IncomeID TINYINT(3) AUTO_INCREMENT PRIMARY KEY,
-    IncomeDate DATE,
+    RecordID INT AUTO_INCREMENT PRIMARY KEY,
+    RecordDate DATE,
     Amount INT,
     Category VARCHAR(20)
 	
 ) Engine=InnoDB;
 
 Create TABLE User (
-    UserID TINYINT(3) AUTO_INCREMENT PRIMARY KEY,
+    UserID INT AUTO_INCREMENT PRIMARY KEY,
     UserName VARCHAR(20),
     Balance INT
 	

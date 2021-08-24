@@ -2,20 +2,20 @@
 
 require_once('inc/config.inc.php');
 require_once('inc/Entity/Page.class.php');
-require_once('inc/Entity/Expenses.class.php');
-require_once('inc/Utility/ExpenseDAO.class.php');
+require_once('inc/Entity/Record.class.php');
+require_once('inc/Utility/RecordDAO.class.php');
 require_once('inc/Utility/PDOService.class.php');
 
-ExpenseDAO::initialize("Expense");
+RecordDAO::initialize("Expense");
 
 if(!empty($_POST)){
 
         $addExpense = new Record();
         $addExpense->setCategory($_POST['category']);
         $addExpense->setAmount($_POST['amount']);
-        $addExpense->setDate($_POST['date']);
+        $addExpense->setRecordDate($_POST['date']);
     
-        ExpenseDAO::addExpense($addExpense);
+        RecordDAO::addRecord($addExpense);
 
 }
 Page::header();
