@@ -14,6 +14,7 @@ if(!empty($_POST)){
         $addExpense->setCategory($_POST['category']);
         $addExpense->setAmount($_POST['amount']);
         $addExpense->setRecordDate($_POST['date']);
+        $addIncome->setRecordType("Expense");
     
         RecordDAO::addRecord($addExpense);
 

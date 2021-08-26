@@ -137,26 +137,27 @@ class Page
     public static function expenses()
     {
         ?>
-      <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+     
       <main role="main" class="inner cover">
+      <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
       <label for="category">category</label>
 
-<select name="category" id="cars">
-  <option value="food">Food</option>
-  <option value="gas">Gas</option>
-  <option value="food">Food</option>
-  <option value="audi">Audi</option>
-</select>
-    <label for="amount">$ </label>
-    <input type="number" id="amount" name="amount"><br>
-    <input type="date" name="date">
+      <select name="category" id="cars">
+        <option value="food">Food</option>
+        <option value="gas">Gas</option>
+        <option value="food">Food</option>
+        <option value="audi">Audi</option>
+      </select>
+      <label for="amount">$ </label>
+      <input type="number" id="amount" name="amount"><br>
+      <input type="date" name="date">
 
-
-    <input type="submit" value="add" class="btn btn-lg btn-secondary">
-    <a href="" id="addToMain" value="add">ADD</a>
-    <a href="index.php" id="goBackToMain" class="btn btn-lg btn-secondary" >Back to Main</a>
-  </main>
+      <input type="submit" name="submit" value="add">
+      <a href="" id="addToMain" value="add">ADD</a>
+      <a href="index.php" id="goBackToMain" class="btn btn-lg btn-secondary" >Back to Main</a>
       </form>
+      </main>
+    
 
 <?php
 }

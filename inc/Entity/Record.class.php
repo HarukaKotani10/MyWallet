@@ -7,6 +7,7 @@ class Record
     private $RecordDate;
     private $Amount;
     private $Category;
+    private $RecordType;
 
     /**
      * Get the value of IncomeID
@@ -72,6 +73,24 @@ class Record
     public function setCategory($Category): self
     {
         $this->Category = $Category;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Type
+     */
+    public function getRecordType()
+    {
+        return $this->RecordType;
+    }
+
+    /**
+     * Set the value of Type
+     */
+    public function setRecordType($RecordType): self
+    {
+        $this->RecordType = $RecordType;
 
         return $this;
     }

@@ -6,7 +6,8 @@ Create TABLE Record (
     RecordID INT AUTO_INCREMENT PRIMARY KEY,
     RecordDate DATE,
     Amount INT,
-    Category VARCHAR(20)
+    Category VARCHAR(20),
+    RecordType VARCHAR(10)
 	
 ) Engine=InnoDB;
 

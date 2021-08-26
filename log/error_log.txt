@@ -21,3 +21,13 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\temp\PHP_Project\MyWallet\expenses.php on line 9
+[26-Aug-2021 03:54:03 UTC] PHP Notice:  Undefined property: Record::$TyRecordTypepe in C:\temp\PHP_Project\MyWallet\inc\Entity\Record.class.php on line 85
+[26-Aug-2021 03:54:03 UTC] PHP Stack trace:
+[26-Aug-2021 03:54:03 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\income.php:0
+[26-Aug-2021 03:54:03 UTC] PHP   2. RecordDAO::addRecord() C:\temp\PHP_Project\MyWallet\income.php:18
+[26-Aug-2021 03:54:03 UTC] PHP   3. Record->getRecordType() C:\temp\PHP_Project\MyWallet\inc\Utility\RecordDAO.class.php:17
+[26-Aug-2021 03:54:31 UTC] PHP Notice:  Undefined property: Record::$TyRecordType in C:\temp\PHP_Project\MyWallet\inc\Entity\Record.class.php on line 85
+[26-Aug-2021 03:54:31 UTC] PHP Stack trace:
+[26-Aug-2021 03:54:31 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\income.php:0
+[26-Aug-2021 03:54:31 UTC] PHP   2. RecordDAO::addRecord() C:\temp\PHP_Project\MyWallet\income.php:18
+[26-Aug-2021 03:54:31 UTC] PHP   3. Record->getRecordType() C:\temp\PHP_Project\MyWallet\inc\Utility\RecordDAO.class.php:17
