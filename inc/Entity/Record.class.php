@@ -3,7 +3,7 @@
 class Record
 {
 
-    private $IncomeID;
+    private $RecordID;
     private $RecordDate;
     private $Amount;
     private $Category;
@@ -12,17 +12,17 @@ class Record
     /**
      * Get the value of IncomeID
      */
-    public function getIncomeID()
+    public function getRecordID()
     {
-        return $this->IncomeID;
+        return $this->RecordID;
     }
 
     /**
      * Set the value of IncomeID
      */
-    public function setIncomeID($IncomeID): self
+    public function setRecordID($RecordID): self
     {
-        $this->IncomeID = $IncomeID;
+        $this->RecordID = $RecordID;
 
         return $this;
     }

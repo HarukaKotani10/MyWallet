@@ -20,6 +20,16 @@ class RecordDAO{
         self::$db->execute();
         // You may want to return the last inserted id
     }
+
+    static function getRecords() {
+        $sql = "SELECT * FROM Record";
+
+        self::$db->query($sql);
+        // QUERY BIND EXECUTE 
+        self::$db->execute();
+        // You may want to return the last inserted id
+        return self::$db->getResultSet();
+    }
 }
 
 ?>

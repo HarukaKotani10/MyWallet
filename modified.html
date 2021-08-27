@@ -1,0 +1,408 @@
+{% comment %}
+/*
+ *
+ * Check if any product has an SKU
+ *
+ */
+{% endcomment %}
+{% assign show_sku_column = false %}
+{% for line_item in order.line_items %}
+    {% if line_item.sku %}
+        {% assign show_sku_column = true %}
+    {% endif %}
+{% endfor %}
+
+{% comment %}
+/*
+ *
+ * Check if the shipping address differs from the billing address.
+ * Also check if the shipping address even exists
+ *
+ */
+{% endcomment %}
+{% assign different_shipping_address = false %}
+{% if order.shipping_address.address1 != order.billing_address.address1 %}
+    {% assign different_shipping_address = true %}
+{% endif %}
+{% if order.shipping_address.name != order.billing_address.name %}
+    {% assign different_shipping_address = true %}
+{% endif %}
+{% assign shipping_address_exists = false %}
+{% if order.shipping_address %}
+    {% assign shipping_address_exists = true %}
+{% endif %}
+{% if shipping_address_exists == false %}
+    {% assign different_shipping_address = false %}
+{% endif %}
+
+
+{% comment %}
+/*
+ *
+ * Check if the user has set a custom text to be displayed at the bottom
+ * of the invoice
+ *
+ */
+{% endcomment %}
+{% assign has_custom_bottom_text = false %}
+{% if store.custom_text_1 %}
+    {% assign has_custom_bottom_text = true %}
+{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>pdf</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    font-size: 10pt;
+    color: #000;
+
+    {% comment %}
+    /*
+     * Properly embedding fonts in PDF is complicated and hasn't
+     * been thoroughly tested in Invoicify yet. If you would like to switch
+     * to another font, try these:
+     * chelvetica, ctimes, ccourier, DejaVuSans, DejaVuSansCondensed,
+     * DejaVuSansMono, DejaVuSerif, DejaVuSerifCondensed
+     */
+    {% endcomment %}
+    font-family: 'DejaVuSansCondensed';
+}
+
+#page-wrapper {
+    width: 180mm;
+    margin: 0 15mm;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.margin-top { margin-top: 35px; }
+table.margin-top-double { margin-top: 100px; }
+table.margin-bottom { margin-bottom: 35px; }
+table.margin-bottom-double { margin-bottom: 100px; }
+
+tr {
+
+}
+
+tr.backgrounded {
+    background-color: #eee;
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 2mm;
+}
+
+td.full { width: 100%; }
+td.one-half { width: 50%; }
+td.one-third { width: 33.33% }
+td.two-thirds { width: 66.66% }
+td.one-fourth { width: 25% }
+td.one-fifth { width: 20% }
+td.one-sixth { width: 16.65% }
+
+td.centered {
+    text-align: center;
+}
+
+table.no-padding tr,
+table.no-padding td {
+    padding: 0;
+}
+
+table.no-border,
+table.no-border tr,
+table.no-border td {
+    border: none;
+    border-color: white;
+}
+
+td.no-border-totals {
+    border-bottom-color: white;
+    border-left-color: white;
+    border-top-color: white;
+}
+
+td.no-border-totals-subtotal {
+    border-bottom-color: white;
+    border-left-color: white;
+}
+
+</style>
+</head>
+<body>
+<div id="page-wrapper">
+
+    {% comment %}
+    /*
+     *
+     * Header: Store details & Customer address(es)
+     *
+     */
+    {% endcomment %}
+    <table class="no-border no-padding margin-bottom-double">
+        <tr>
+            <td class="two-thirds" valign="center">
+                {% if store.logo %}
+                    <img src="{{ store.logo }}" /><br /><br /><br />
+                {% else %}
+                    <h1>{{ store.company }}</h1><br />
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="two-thirds" valign="top" >
+                {{ store.address1 }}<br />
+                {{ store.city }} {{ store.zip }}<br />
+                {% if store.province %}{{ store.province }}<br />{% endif %}
+                {{ store.country }}<br /><br />
+                <table class="no-padding no-border">
+                    {% if store.telephone %}
+                        <tr>
+                            <td>{{ 'Phone' | translate }}: </td>
+                            <td>{{ store.telephone }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if store.email %}
+                        <tr>
+                            <td>{{ 'E-Mail' | translate }}: </td>
+                            <td>{{ store.email }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if store.website %}
+                        <tr>
+                            <td>{{ 'Web' | translate }}: </td>
+                            <td>{{ store.website }}</td>
+                        </tr>
+                    {% endif %}
+                </table>
+            </td>
+            <td class="one-third" valign="top">
+                {% if order.billing_address.company %}
+                    {{ order.billing_address.company }}<br />
+                {% endif %}
+                {% if order.billing_address.name %}
+                    {{ order.billing_address.name }}<br />
+                {% endif %}
+                {{ order.billing_address.address1 }}<br />
+                {% if order.billing_address.address2 %}
+                    {{ order.billing_address.address2 }}<br />
+                {% endif %}
+                {{ order.billing_address.city }} {{ order.billing_address.province_code }} {{ order.billing_address.zip }}<br />
+                {{ order.billing_address.country }}
+            </td>
+        </tr>
+        {% if different_shipping_address %}
+        <tr>
+            <td class="two-thirds"></td>
+            <td class="one-third">
+                <strong>{{ 'Shipping address' | translate }}:</strong><br /><br/>
+                {% if order.shipping_address.company %}
+                    {{ order.shipping_address.company }}<br />
+                {% endif %}
+                {% if order.shipping_address.name %}
+                    {{ order.shipping_address.name }}<br />
+                {% endif %}
+                {{ order.shipping_address.address1 }}<br />
+                {% if order.shipping_address.address2 %}
+                    {{ order.shipping_address.address2 }}<br />
+                {% endif %}
+                {{ order.shipping_address.city }} {{ order.shipping_address.province_code }} {{ order.shipping_address.zip }}<br />
+                {{ order.shipping_address.country }}
+            </td>
+        </tr>
+        {% endif %}
+    </table>
+
+    {% comment %}
+    /*
+     *
+     * Order overview bar
+     *
+     */
+    {% endcomment %}
+    <table class="margin-top margin-bottom">
+        <tr class="backgrounded">
+            <td class="one-third centered">
+                {{ 'Order' | translate }}
+            </td>
+            <td class="one-third centered">
+                {{ 'Order Date' | translate }}
+            </td>
+            <td class="one-third centered">
+                {{ 'Order Total' | translate }}
+            </td>
+        </tr>
+        <tr>
+            <td class="one-third centered">
+                {{ order.name }}
+            </td>
+            <td class="one-third centered">
+                {{ order.created_at | date: store.date_format }}
+            </td>
+            <td class="one-third centered">
+                {{ order.currency }}
+                {{ order.total_price }}
+            </td>
+        </tr>
+    </table>
+
+    {% comment %}
+    /*
+     *
+     * Item listing
+     *
+     */
+    {% endcomment %}
+    {% if different_shipping_address %}
+        {% assign item_listing_height = '120mm' %}
+    {% else %}
+        {% assign item_listing_height = '130mm' %}
+    {% endif %}
+    <table class="margin-top">
+        <tr class="backgrounded">
+            {% if show_sku_column %}
+                <td class="one-sixth" align="center">{{ 'SKU' | translate }}</td>
+                <td class="one-third" align="center">{{ 'Product' | translate }}</td>
+            {% else %}
+                <td class="one-half" align="center">{{ 'Product' | translate }}</td>
+            {% endif %}
+            <td class="one-sixth" align="center">{{ 'Quantity' | translate }}</td>
+            <td class="one-sixth" align="center">{{ 'Rate' | translate }}</td>
+            <td class="one-sixth" align="center">{{ 'Total' | translate }}</td>
+        </tr>
+    </table>
+    <table>
+        {% for line_item in order.line_items %}
+            <tr>
+                {% if show_sku_column %}
+                    <td class="one-sixth" align="left">{{ line_item.sku }}</td>
+                    <td class="one-third" align="left">{{ line_item.name }}</td>
+                {% else %}
+                    <td class="one-half" align="left">{{ line_item.name }}</td>
+                {% endif %}
+                <td class="one-sixth" align="right">{{ line_item.quantity }}</td>
+                {% if line_item.total_discount > 0 %}
+                    {% assign line_item_discount_per_item = line_item.total_discount | divided_by: line_item.quantity %}
+                    {% assign line_item_discounted_price = line_item.price | minus: line_item_discount_per_item %}
+                    {% assign line_item_discounted_price = line_item_discounted_price | separator %}
+                    <td class="one-sixth" align="right"><span style="text-decoration:line-through">{{line_item.price}}</span> {{line_item_discounted_price}}</td>
+                {% else %}
+                    <td class="one-sixth" align="right">{{line_item.price}}</td>
+                {% endif %}
+                    <td class="one-sixth" align="right">
+                        {% if line_item.total_discount > 0 %}
+                            {% assign line_item_discounted_price_total = line_item_discounted_price | times: line_item.quantity %}
+                            {% assign line_item_discounted_price_total = line_item_discounted_price_total | separator %}
+                            {{line_item_discounted_price_total}}
+                        {% else %}
+                            {% comment %}
+                            /*
+                            *
+                            * Since Shopify doesn't tell us the total price
+                            * of the full quantity of the line item, we need
+                            * to calculate it ourselves and format the
+                            * resulting total price (add .00 if the price
+                            * is an even number)
+                            *
+                            */
+                            {% endcomment %}
+                            {% assign total_line_item_price = line_item.price | times: line_item.quantity %}
+                            {% assign total_line_item_price_split = total_line_item_price | split: '.' %}
+                            {% if total_line_item_price_split.size == 1 %}
+                                {{ total_line_item_price }}.00
+                            {% else %}
+                                {% assign size = total_line_item_price_split[1] | size %}
+                                {% if size == 1%}
+                                    {{ total_line_item_price }}0
+                                {% else %}
+                                    {{ total_line_item_price }}
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    </td>
+            </tr>
+        {% endfor %}
+
+        {% comment %}
+        /*
+         *
+         * Order totals
+         *
+         */
+        {% endcomment %}
+        {% assign totals_title_colspan = '3' %}
+        {% if show_sku_column %}
+            {% assign totals_title_colspan = '4' %}
+        {% endif %}
+        {% assign has_discount = 'true' %}
+        {% if order.discount_codes.size != 0 %}
+            {% for discount_code in order.discount_codes %}
+                <tr>
+                    <td class="no-border-totals-subtotal" align="right" colspan="{{ totals_title_colspan }}">{{ 'Discount code' | translate }}: {{ discount_code.code }}</td>
+                    <td class="one-sixth" align="right">-{{ discount_code.amount }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            {% assign has_discount = 'false' %}
+        {% endif %}
+        <tr>
+            <td class="{% if has_discount == 'false' %}no-border-totals-subtotal{% else %}no-border-totals{% endif %}" align="right" colspan="{{ totals_title_colspan }}">Subtotal</td>
+            <td class="one-sixth" align="right">{{ order.subtotal_price }}</td>
+        </tr>
+        {% if order.tax_lines.size != 0 %}
+            {% for tax_line in order.tax_lines %}
+                <tr>
+                    <td class="no-border-totals" align="right" colspan="{{ totals_title_colspan }}">
+                        {{ tax_line.title }}
+                        {{ tax_line.rate | times: 100 }}%
+                        {% if order.taxes_included == 'true' %}(included){% endif %}
+                    </td>
+                    <td class="one-sixth" align="right">{{ tax_line.price }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+        {% if order.shipping_lines.size != 0 %}
+            {% for shipping_line in order.shipping_lines %}
+                <tr>
+                    <td class="no-border-totals" align="right" colspan="{{ totals_title_colspan }}">{{ shipping_line.title }}</td>
+                    <td class="one-sixth" align="right">{{ shipping_line.price }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+        <tr>
+            <td class="no-border-totals" align="right" colspan="{{ totals_title_colspan }}"><strong>{{ 'Total' | translate }}</strong></td>
+            <td class="one-sixth"  align="right"><strong>{{ order.currency }} {{ order.total_price }}</strong></td>
+        </tr>
+    </table>
+
+    {% comment %}
+    /*
+     *
+     * Custom text
+     *
+     */
+    {% endcomment %}
+    {% if store.custom_text_1 %}
+        <table class="no-border no-padding margin-top">
+            <tr>
+                <td valign="top">
+                  {{ store.custom_text_1 }}
+                </td>
+            </tr>
+        </table>
+    {% endif %}
+</div>
+</body>
+</html>

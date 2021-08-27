@@ -75,7 +75,7 @@ class Page
     <?php
 }
 
-    public static function main()
+    public static function main($records)
     {
         ?>
 
@@ -98,26 +98,23 @@ class Page
       <th scope="col">Date</th>
       <th scope="col">Amount</th>
       <th scope="col">Category</th>
+      <th scope="col">Type</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+
+      <?php
+      foreach($records as $record){
+        echo "<tr>";
+        echo "<td>". $record->getRecordID(). "</td>";
+        echo "<td>". $record->getRecordDate(). "</td>";
+        echo "<td>". $record->getAmount(). "</td>";
+        echo "<td>". $record->getCategory(). "</td>";
+        echo "<td>". $record->getRecordType(). "</td>";
+        echo "</tr>";
+      }
+
+      ?>
   </tbody>
 </table>
   </main>
