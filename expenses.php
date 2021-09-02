@@ -12,7 +12,7 @@ if(!empty($_POST)){
 
         $addExpense = new Record();
         $addExpense->setCategory($_POST['category']);
-        $addExpense->setAmount($_POST['amount']);
+        $addExpense->setAmount(abs($_POST['amount']) * -1);
         $addExpense->setRecordDate($_POST['date']);
         $addExpense->setRecordType("Expense");
     

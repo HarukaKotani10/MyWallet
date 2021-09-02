@@ -3,6 +3,8 @@
 class Page
 {
 
+    static $balance = 0;
+
     public static function header()
     {
         ?>
@@ -80,7 +82,7 @@ class Page
         ?>
 
   <main role="main" class="inner cover">
-    <h2 class="cover-heading" >Your balance: </h2><h1 id="balance">$0.00</h2>
+    <h2 class="cover-heading" >Your balance:</h2><h1 id="balance">$<?php echo self::$balance ?></h2>
 
     <p class="lead">
       <a href="expenses.php" id="incomeBtn" class="btn btn-lg btn-secondary">+</a>
@@ -112,6 +114,8 @@ class Page
         echo "<td>". $record->getCategory(). "</td>";
         echo "<td>". $record->getRecordType(). "</td>";
         echo "</tr>";
+
+        self::$balance += $record->getAmount();
       }
 
       ?>
