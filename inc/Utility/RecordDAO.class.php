@@ -30,6 +30,16 @@ class RecordDAO{
         // You may want to return the last inserted id
         return self::$db->getResultSet();
     }
+
+    static function getBalance() {
+        $sql = "SELECT SUM(Amount) FROM Record";
+
+        self::$db->query($sql);
+        // QUERY BIND EXECUTE 
+        self::$db->execute();
+        // You may want to return the last inserted id
+        return self::$db->singleResult();
+    }
 }
 
 ?>

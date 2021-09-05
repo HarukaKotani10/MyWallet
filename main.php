@@ -9,9 +9,10 @@ require_once('inc/Utility/PDOService.class.php');
 RecordDAO::initialize("Record");
 
 $records = RecordDAO::getRecords();
+$balance = RecordDAO::getBalance();
 
 Page::header();
-Page::main($records);
+Page::main($records, $balance);
 Page::footer();
 
 ?>
