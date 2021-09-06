@@ -32,7 +32,7 @@ class RecordDAO{
     }
 
     static function getBalance() {
-        $sql = "SELECT SUM(Amount) FROM Record";
+        $sql = "SELECT SUM(Amount) AS Balance FROM Record";
 
         self::$db->query($sql);
         // QUERY BIND EXECUTE 

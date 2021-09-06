@@ -80,11 +80,11 @@ class Page
         ?>
 
   <main role="main" class="inner cover">
-    <h2 class="cover-heading" >Your balance:</h2><h1 id="balance">$<?php echo $balance ?></h2>
+    <h2 class="cover-heading" >Your balance:</h2><h1 id="balance">$<?php echo $balance->Balance; ?></h2>
 
     <p class="lead">
-      <a href="expenses.php" id="incomeBtn" class="btn btn-lg btn-secondary">+</a>
-      <a href="income.php" id="expensesBtn" class="btn btn-lg btn-secondary">-</a>
+      <a href="income.php" id="expensesBtn" class="btn btn-lg btn-secondary">+</a>
+      <a href="expenses.php" id="incomeBtn" class="btn btn-lg btn-secondary">-</a>
     </p>
 
     <table>
@@ -151,8 +151,8 @@ class Page
       <input type="date" name="date">
 
       <input type="submit" name="submit" value="add">
-      <a href="" id="addToMain" value="add">ADD</a>
-      <a href="index.php" id="goBackToMain" class="btn btn-lg btn-secondary" >Back to Main</a>
+     
+      <a href="main.php" id="goBackToMain" class="btn btn-lg btn-secondary" >Back to Main</a>
       </form>
       </main>
     

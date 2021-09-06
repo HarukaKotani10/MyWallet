@@ -5,7 +5,7 @@ USE MyWallet;
 Create TABLE Record (
     RecordID INT AUTO_INCREMENT PRIMARY KEY,
     RecordDate DATE,
-    Amount INT,
+    Amount FLOAT,
     Category VARCHAR(20),
     RecordType VARCHAR(10)
 	

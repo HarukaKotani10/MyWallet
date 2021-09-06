@@ -1,0 +1,87 @@
+[06-Sep-2021 17:25:14 UTC] PHP Recoverable fatal error:  Object of class Record could not be converted to string in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:25:14 UTC] PHP Stack trace:
+[06-Sep-2021 17:25:14 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:25:14 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:26:32 UTC] PHP Recoverable fatal error:  Object of class Record could not be converted to string in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:26:32 UTC] PHP Stack trace:
+[06-Sep-2021 17:26:32 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:26:32 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:27:30 UTC] PHP Warning:  number_format() expects parameter 1 to be float, object given in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:27:30 UTC] PHP Stack trace:
+[06-Sep-2021 17:27:30 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:27:30 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:27:30 UTC] PHP   3. number_format() C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php:83
+[06-Sep-2021 17:29:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function float() in C:\temp\PHP_Project\MyWallet\main.php:12
+Stack trace:
+#0 {main}
+  thrown in C:\temp\PHP_Project\MyWallet\main.php on line 12
+[06-Sep-2021 17:29:16 UTC] PHP Notice:  Object of class Record could not be converted to float in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:29:16 UTC] PHP Stack trace:
+[06-Sep-2021 17:29:16 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:29:16 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:29:36 UTC] PHP Notice:  Object of class Record could not be converted to float in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:29:36 UTC] PHP Stack trace:
+[06-Sep-2021 17:29:36 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:29:36 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:32:18 UTC] PHP Warning:  number_format() expects parameter 1 to be float, object given in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:32:18 UTC] PHP Stack trace:
+[06-Sep-2021 17:32:18 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:32:18 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:32:18 UTC] PHP   3. number_format() C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php:83
+[06-Sep-2021 17:32:52 UTC] PHP Notice:  Object of class Record could not be converted to float in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:32:52 UTC] PHP Stack trace:
+[06-Sep-2021 17:32:52 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:32:52 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:33:14 UTC] PHP Warning:  number_format() expects parameter 1 to be float, object given in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:33:14 UTC] PHP Stack trace:
+[06-Sep-2021 17:33:14 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:33:14 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:33:14 UTC] PHP   3. number_format() C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php:83
+[06-Sep-2021 17:34:20 UTC] PHP Warning:  number_format() expects parameter 1 to be float, object given in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 84
+[06-Sep-2021 17:34:20 UTC] PHP Stack trace:
+[06-Sep-2021 17:34:20 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:34:20 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:34:20 UTC] PHP   3. number_format() C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php:84
+[06-Sep-2021 17:34:47 UTC] PHP Warning:  number_format() expects parameter 1 to be float, object given in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 84
+[06-Sep-2021 17:34:47 UTC] PHP Stack trace:
+[06-Sep-2021 17:34:47 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:34:47 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:34:47 UTC] PHP   3. number_format() C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php:84
+[06-Sep-2021 17:35:02 UTC] PHP Warning:  number_format() expects parameter 1 to be float, object given in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 84
+[06-Sep-2021 17:35:02 UTC] PHP Stack trace:
+[06-Sep-2021 17:35:02 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:35:02 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:35:02 UTC] PHP   3. number_format() C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php:84
+[06-Sep-2021 17:36:01 UTC] PHP Notice:  Object of class Record could not be converted to float in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 84
+[06-Sep-2021 17:36:01 UTC] PHP Stack trace:
+[06-Sep-2021 17:36:01 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:36:01 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:36:06 UTC] PHP Notice:  Object of class Record could not be converted to float in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 84
+[06-Sep-2021 17:36:06 UTC] PHP Stack trace:
+[06-Sep-2021 17:36:06 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:36:06 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:36:48 UTC] PHP Notice:  Object of class Record could not be converted to float in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 84
+[06-Sep-2021 17:36:48 UTC] PHP Stack trace:
+[06-Sep-2021 17:36:48 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:36:48 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:38:42 UTC] PHP Warning:  number_format() expects parameter 1 to be float, object given in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:38:42 UTC] PHP Stack trace:
+[06-Sep-2021 17:38:42 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:38:42 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:38:42 UTC] PHP   3. number_format() C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php:83
+[06-Sep-2021 17:38:55 UTC] PHP Notice:  Object of class Record could not be converted to float in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:38:55 UTC] PHP Stack trace:
+[06-Sep-2021 17:38:55 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:38:55 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:39:37 UTC] PHP Notice:  Object of class Record could not be converted to float in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:39:37 UTC] PHP Stack trace:
+[06-Sep-2021 17:39:37 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:39:37 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:41:56 UTC] PHP Recoverable fatal error:  Object of class Record could not be converted to string in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:41:56 UTC] PHP Stack trace:
+[06-Sep-2021 17:41:56 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:41:56 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[06-Sep-2021 17:43:58 UTC] PHP Notice:  Undefined property: Record::$Balance in C:\temp\PHP_Project\MyWallet\inc\Entity\Page.class.php on line 83
+[06-Sep-2021 17:43:58 UTC] PHP Stack trace:
+[06-Sep-2021 17:43:58 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
+[06-Sep-2021 17:43:58 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
