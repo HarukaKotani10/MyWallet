@@ -38,6 +38,7 @@ class Page
           font-size: 3.5rem;
         }
       }
+
     </style>
     <!-- Custom styles for this template -->
     <link href="myWalletHome.css" rel="stylesheet">
@@ -86,12 +87,7 @@ class Page
       <a href="income.php" id="expensesBtn" class="btn btn-lg btn-secondary">+</a>
       <a href="expenses.php" id="incomeBtn" class="btn btn-lg btn-secondary">-</a>
     </p>
-
-    <table>
-
-      <table>
-
-      <table class="table table-hover">
+      <table class="table table-hover" style="color: white;">
   <thead>
     <tr>
       <th scope="col">#</th>
