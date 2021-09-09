@@ -38,6 +38,7 @@ class Page
           font-size: 3.5rem;
         }
       }
+      
 
     </style>
     <!-- Custom styles for this template -->
@@ -87,7 +88,7 @@ class Page
       <a href="income.php" id="expensesBtn" class="btn btn-lg btn-secondary">+</a>
       <a href="expenses.php" id="incomeBtn" class="btn btn-lg btn-secondary">-</a>
     </p>
-      <table class="table table-hover" style="color: white;">
+      <table class="table" style="color: white;">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -130,6 +131,7 @@ class Page
 
     public static function expenses()
     {
+     
         ?>
      
       <main role="main" class="inner cover">
@@ -144,7 +146,7 @@ class Page
       </select>
       <label for="amount">$ </label>
       <input type="number" id="amount" name="amount"><br>
-      <input type="date" name="date">
+      <input type="date" name="date" value="<?php echo date("Y-m-d")?>">
 
       <input type="submit" name="submit" value="add">
      
