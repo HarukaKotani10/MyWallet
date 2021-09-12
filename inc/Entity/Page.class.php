@@ -42,6 +42,10 @@ class Page
       .form-length{
         width:100px
       }
+
+      .btn-hover a {
+        background-color: yellow;
+      }
       
 
     </style>
@@ -138,39 +142,48 @@ class Page
      
         ?>
 
-        
-<div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-    </div>
-  </div>
+
   
       <main role="main" class="inner cover">
       <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-      <label for="category">Category: </label>
-
-      <select name="category" id="cars">
-        <option value="food">Food</option>
+              
+<div class="form-group row">
+    <label for="category" class="col-sm-2 col-form-label">Category</label>
+    <div class="col-sm-5">
+    <select name="category" id="category" class="form-control">
+        <option value="food">Groceries</option>
         <option value="gas">Gas</option>
-        <option value="food">Food</option>
-        <option value="audi">Audi</option>
+        <option value="food">Restaurant</option>
+        <option value="audi">Rent</option>
       </select>
-      </br>
-      <label for="amount">Amount: </label>
-      <input type="number" id="amount" name="amount" class="form-control form-length"><br>
-      <label for="date">Date: </label>
-      <input type="date" name="date" value="<?php echo date("Y-m-d")?>"><br>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="amount" class="col-sm-2 col-form-label">Amount</label>
+    <div class="col-sm-5">
+      <input type="amount" class="form-control" id="amount" placeholder="100">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="date" class="col-sm-2 col-form-label">Date</label>
+    <div class="col-sm-5">
+      <input type="date" class="form-control" id="date"value="<?php echo date("Y-m-d")?>">
+    </div>
+  </div>
 
-      <input type="submit" name="submit" value="add" class="btn btn-lg btn-secondary">  
-     
-      <a href="main.php" id="goBackToMain" class="btn btn-lg btn-secondary" >Back to Main</a>
+  <div class="form-group row">
+  <label for="submit" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-5">
+    <input type="submit" name="submit" value="add" class="btn btn-lg btn-secondary form-control">  
+    </div>
+  </div>
+    
+  <div class="form-group row">
+  <label for="goBackToMain" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-5">
+    <a href="main.php" id="goBackToMain" class="btn btn-lg btn-secondary form-control btn-hover" >Back to Main</a>
+    </div>
+  </div>
       </form>
       </main>
     
