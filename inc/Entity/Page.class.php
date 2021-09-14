@@ -161,13 +161,13 @@ class Page
   <div class="form-group row">
     <label for="amount" class="col-sm-2 col-form-label">Amount</label>
     <div class="col-sm-5">
-      <input type="amount" class="form-control" id="amount" placeholder="100">
+      <input type="number" class="form-control" id="amount" placeholder="100" name="amount">
     </div>
   </div>
   <div class="form-group row">
     <label for="date" class="col-sm-2 col-form-label">Date</label>
     <div class="col-sm-5">
-      <input type="date" class="form-control" id="date"value="<?php echo date("Y-m-d")?>">
+      <input type="date" class="form-control" id="date" name="date" value="<?php echo date("Y-m-d")?>">
     </div>
   </div>
 

@@ -8,9 +8,10 @@ class RecordDAO{
     }
 
     static function addRecord(Record $addRecord) {
-        $sql = "INSERT INTO Record(RecordDate, Amount, Category, RecordType) VALUE(:date, :amount, :category, :recordType)";
+        $sql = "INSERT INTO Record(UserID, RecordDate, Amount, Category, RecordType) VALUE(:userID, :date, :amount, :category, :recordType)";
     
         self::$db->query($sql);
+        self::$db->bind(":userID", 1);
         self::$db->bind(":date", $addRecord->getRecordDate());
         self::$db->bind(":amount", $addRecord->getAmount());
         self::$db->bind(":category", $addRecord->getCategory());

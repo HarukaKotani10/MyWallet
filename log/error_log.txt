@@ -85,3 +85,60 @@ Stack trace:
 [06-Sep-2021 17:43:58 UTC] PHP Stack trace:
 [06-Sep-2021 17:43:58 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\main.php:0
 [06-Sep-2021 17:43:58 UTC] PHP   2. Page::main() C:\temp\PHP_Project\MyWallet\main.php:15
+[14-Sep-2021 17:40:34 UTC] PHP Notice:  Undefined index: amount in C:\temp\PHP_Project\MyWallet\income.php on line 15
+[14-Sep-2021 17:40:34 UTC] PHP Stack trace:
+[14-Sep-2021 17:40:34 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\income.php:0
+[14-Sep-2021 17:40:34 UTC] PHP Notice:  Undefined index: date in C:\temp\PHP_Project\MyWallet\income.php on line 16
+[14-Sep-2021 17:40:34 UTC] PHP Stack trace:
+[14-Sep-2021 17:40:34 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\income.php:0
+[14-Sep-2021 17:42:15 UTC] PHP Notice:  Undefined index: amount in C:\temp\PHP_Project\MyWallet\income.php on line 15
+[14-Sep-2021 17:42:15 UTC] PHP Stack trace:
+[14-Sep-2021 17:42:15 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\income.php:0
+[14-Sep-2021 17:42:15 UTC] PHP Notice:  Undefined index: date in C:\temp\PHP_Project\MyWallet\income.php on line 16
+[14-Sep-2021 17:42:15 UTC] PHP Stack trace:
+[14-Sep-2021 17:42:15 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\income.php:0
+[14-Sep-2021 17:42:18 UTC] PHP Notice:  Undefined index: date in C:\temp\PHP_Project\MyWallet\income.php on line 16
+[14-Sep-2021 17:42:18 UTC] PHP Stack trace:
+[14-Sep-2021 17:42:18 UTC] PHP   1. {main}() C:\temp\PHP_Project\MyWallet\income.php:0
+[14-Sep-2021 17:42:18 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Amount' at row 1 in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php:75
+Stack trace:
+#0 C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php(75): PDOStatement->execute()
+#1 C:\temp\PHP_Project\MyWallet\inc\Utility\RecordDAO.class.php(20): PDOService->execute()
+#2 C:\temp\PHP_Project\MyWallet\income.php(18): RecordDAO::addRecord(Object(Record))
+#3 {main}
+  thrown in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php on line 75
+[14-Sep-2021 17:43:15 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Amount' at row 1 in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php:75
+Stack trace:
+#0 C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php(75): PDOStatement->execute()
+#1 C:\temp\PHP_Project\MyWallet\inc\Utility\RecordDAO.class.php(20): PDOService->execute()
+#2 C:\temp\PHP_Project\MyWallet\income.php(18): RecordDAO::addRecord(Object(Record))
+#3 {main}
+  thrown in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php on line 75
+[14-Sep-2021 17:44:24 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Amount' at row 1 in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php:75
+Stack trace:
+#0 C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php(75): PDOStatement->execute()
+#1 C:\temp\PHP_Project\MyWallet\inc\Utility\RecordDAO.class.php(20): PDOService->execute()
+#2 C:\temp\PHP_Project\MyWallet\income.php(18): RecordDAO::addRecord(Object(Record))
+#3 {main}
+  thrown in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php on line 75
+[14-Sep-2021 17:48:46 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Amount' at row 1 in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php:75
+Stack trace:
+#0 C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php(75): PDOStatement->execute()
+#1 C:\temp\PHP_Project\MyWallet\inc\Utility\RecordDAO.class.php(21): PDOService->execute()
+#2 C:\temp\PHP_Project\MyWallet\income.php(18): RecordDAO::addRecord(Object(Record))
+#3 {main}
+  thrown in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php on line 75
+[14-Sep-2021 17:49:41 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mywallet`.`record`, CONSTRAINT `record_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `user` (`UserID`)) in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php:75
+Stack trace:
+#0 C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php(75): PDOStatement->execute()
+#1 C:\temp\PHP_Project\MyWallet\inc\Utility\RecordDAO.class.php(21): PDOService->execute()
+#2 C:\temp\PHP_Project\MyWallet\expenses.php(19): RecordDAO::addRecord(Object(Record))
+#3 {main}
+  thrown in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php on line 75
+[14-Sep-2021 17:49:50 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mywallet`.`record`, CONSTRAINT `record_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `user` (`UserID`)) in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php:75
+Stack trace:
+#0 C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php(75): PDOStatement->execute()
+#1 C:\temp\PHP_Project\MyWallet\inc\Utility\RecordDAO.class.php(21): PDOService->execute()
+#2 C:\temp\PHP_Project\MyWallet\expenses.php(19): RecordDAO::addRecord(Object(Record))
+#3 {main}
+  thrown in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php on line 75
