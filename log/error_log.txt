@@ -142,3 +142,10 @@ Stack trace:
 #2 C:\temp\PHP_Project\MyWallet\expenses.php(19): RecordDAO::addRecord(Object(Record))
 #3 {main}
   thrown in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php on line 75
+[17-Sep-2021 06:22:28 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Amount' at row 1 in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php:75
+Stack trace:
+#0 C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php(75): PDOStatement->execute()
+#1 C:\temp\PHP_Project\MyWallet\inc\Utility\RecordDAO.class.php(21): PDOService->execute()
+#2 C:\temp\PHP_Project\MyWallet\income.php(18): RecordDAO::addRecord(Object(Record))
+#3 {main}
+  thrown in C:\temp\PHP_Project\MyWallet\inc\Utility\PDOService.class.php on line 75

@@ -53,7 +53,7 @@ class Page
     <link href="myWalletHome.css" rel="stylesheet">
     <script type="text/javascript" src="script.js"></script>
   </head>
-  <body class="text-center" onload="addToMain()">
+  <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead">
     <div class="inner">
@@ -124,16 +124,6 @@ class Page
   </tbody>
 </table>
   </main>
-
-  <script>
-    function incomeFunction(){
-      window.location.replace("income.html");
-    }
-
-    function expensesFunction(){
-      window.location.replace("expenses.php");
-
-  </script>
         <?php
 }
 
@@ -142,10 +132,8 @@ class Page
      
         ?>
 
-
-  
       <main role="main" class="inner cover">
-      <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+      <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" style="margin-left:100px;">
               
 <div class="form-group row">
     <label for="category" class="col-sm-2 col-form-label">Category</label>
@@ -174,16 +162,10 @@ class Page
   <div class="form-group row">
   <label for="submit" class="col-sm-2 col-form-label"></label>
     <div class="col-sm-5">
-    <input type="submit" name="submit" value="add" class="btn btn-lg btn-secondary form-control">  
+    <input type="submit" name="submit" value="add" class="btn btn-lg btn-secondary form-control" style="background-color: #4266f5;">  
     </div>
   </div>
-    
-  <div class="form-group row">
-  <label for="goBackToMain" class="col-sm-2 col-form-label"></label>
-    <div class="col-sm-5">
-    <a href="main.php" id="goBackToMain" class="btn btn-lg btn-secondary form-control btn-hover" >Back to Main</a>
-    </div>
-  </div>
+
       </form>
       </main>
     
