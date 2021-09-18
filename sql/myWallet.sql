@@ -4,6 +4,8 @@ USE MyWallet;
 
 Create TABLE User (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
+    Email VARCHAR(20),
+    Password VARCHAR(20),
     UserName VARCHAR(20),
     Balance INT
 	
